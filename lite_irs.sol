@@ -40,7 +40,7 @@ contract LiteIRS {
 
     /*@param underlying_ address of the ERC20 token representing the underlying (USDC)
      * @param rate_oracle_ oracle from which we will get the variable rates
-     * @param lending_pool_ aave lending pool
+     * @param lending_pool_ address of the aave lending pool
      * @dev init contract params
      */
     constructor (
@@ -49,8 +49,8 @@ contract LiteIRS {
         ) {
         // Check token address exists
         require(address(underlying_) != address(0), "underlying must exist");
-        // Check token address exists
-        require(address(lending_pool_) != address(0), "underlying must exist");
+        // Check lending pool address exists
+        require(address(lending_pool_) != address(0), "lending pool must exist");
         // init token
         underlying = underlying_;
         // init oracle with empty observations and times. 
