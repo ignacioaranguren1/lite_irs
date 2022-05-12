@@ -67,7 +67,7 @@ contract LiteIRS {
      * @param maturity_ of the contract
      * @dev Contract initialization
      */
-    function init_contrac (
+    function init_contract (
         address payable fixed_taker_addr_, 
         address payable variable_taker_addr_,       
         uint256 notional_, 
