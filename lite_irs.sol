@@ -124,12 +124,12 @@ contract LiteIRS {
             underlying.transfer(fixed_taker.addr, mark_to_market);
             variable_taker.margin =  variable_taker.margin - mark_to_market;
         }
-        // If there is more margin available, divide it and transfer it to the parties involved in trade.
+        // If there is more margin available, transfer it to the parties involved in trade.
         uint256 margin_left = underlying.balanceOf(address(this));
-        // If margin left greater than 2 transfer i
+        // If margin left greater than 0 transfer
         if (margin_left > 0){
             underlying.transfer(fixed_taker.addr, fixed_taker.margin);
-            underlying.transfer(fixed_taker.addr, variable_taker.margin);
+            underlying.transfer(variable_taker.addr, variable_taker.margin);
         }
     }
 
