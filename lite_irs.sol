@@ -38,7 +38,6 @@ contract LiteIRS {
         _;
     }
 
-    
     /*@param underlying_ address of the ERC20 token representing the underlying (USDC)
      * @param rate_oracle_ oracle from which we will get the variable rates
      * @param lending_pool_ aave lending pool
