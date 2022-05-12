@@ -81,7 +81,7 @@ contract LiteIRS {
         notional = notional_ * WadRayMath.WAD;
         maturity = maturity_;
         creation_date = block.timestamp;
-        margin_requirement = WadRayMath.wadDiv(7 * notional * WadRayMath.WAD, 100 * WadRayMath.WAD);
+        margin_requirement = WadRayMath.wadDiv(7 * notional * WadRayMath.WAD, 100 * WadRayMath.WAD); // We need to express the 7% of the notional in Wads
 
         // Init margin requirement
         init_margin();
@@ -150,7 +150,6 @@ contract LiteIRS {
      * @dev Check if position is under margin requirement
      */
     function check_margin_requirement(uint256 threshold) private view returns(bool) {
-        // We need to express the 7% of the notional in Wads
         if(fixed_taker.margin < threshold || variable_taker.margin < threshold) return true;
         return false;
     }
